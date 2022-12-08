@@ -82,3 +82,33 @@ public class MyMap<K, V> {
     }
     // . . .
 }
+
+Retrieve from hashmap
+
+public V get(K key) {
+    Entry<K, V> bucket = buckets[getHash(key) % getBucketSize()];
+
+    while (bucket != null) {
+        if (bucket.key.equals(key)) {
+            return bucket.value;
+        }
+        bucket = bucket.next;
+    }
+    return null;
+}
+
+if testing
+
+@Test
+public void testMyMap() {
+    MyMap<String, String> myMap = new MyMap<>();
+    myMap.put("USA", "Washington DC");
+    myMap.put("Nepal", "Kathmandu");
+    myMap.put("India", "New Delhi");
+    myMap.put("Australia", "Sydney");
+
+    assertNotNull(myMap);
+    assertEquals(4, myMap.size());
+    assertEquals("Kathmandu", myMap.get("Nepal"));
+    assertEquals("Sydney", myMap.get("Australia"));
+}
