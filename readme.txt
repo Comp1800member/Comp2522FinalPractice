@@ -38,6 +38,21 @@ public class Observer {
 
 
 Hashmap Example
+//first part is class which represents node of a linked list
+class Entry<K, V> {
+    final K key;
+    V value;
+    Entry<K, V> next;
+
+    public Entry(K key, V value, Entry<K, V> next) {
+        this.key = key;
+        this.value = value;
+        this.next = next;
+    }
+
+    // getters, equals, hashCode and toString
+}
+//up to here
 
 public class MyMap<K, V> {
     private Entry<K, V>[] buckets;
