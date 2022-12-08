@@ -54,6 +54,7 @@ class Entry<K, V> {
 }
 //up to here
 
+//inserting element
 public class MyMap<K, V> {
     private Entry<K, V>[] buckets;
     private static final int INITIAL_CAPACITY = 1 << 4; // 16
@@ -97,6 +98,7 @@ public class MyMap<K, V> {
     }
     // . . .
 }
+//up to here
 
 Retrieve from hashmap
 
@@ -111,7 +113,7 @@ public V get(K key) {
     }
     return null;
 }
-
+//up to here
 if testing
 
 @Test
